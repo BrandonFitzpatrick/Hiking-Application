@@ -1,0 +1,114 @@
+AccountList contains the following:
+
+accounts (Account TreeMap with username as key)
+The most significant reason I chose to use a TreeMap is searching. Searching is done very frequently, between users
+logging in, and users searching for other users. TreeMap gives a time complexity of O(log n) for these functions.
+Creating new accounts is also fairly efficient, giving a time complexity of O(log n) as well. Using a LinkedList
+would be more efficient in this regard, but would also be much less efficient at searching, giving a time complexity of O(n).
+Additionally, using a TreeMap ensures that each username is unique, as an account with a duplicate key value will not be 
+added. HashMap cannot be used, as we have no idea how many accounts will be created. 
+
+
+
+Account objects contain the following: 
+
+postHistory (Post LinkedList) 
+I chose to use a LinkedList for post history for two main reasons: firstly, creating a post, which is generally done
+much more frequently than deleting a post, gives a time complexity of O(1). Additionally, the post history maintaining
+chronological order of when posts are made is a crucial aspect of this program. New posts get added to the end of the LinkedList,
+ensuring that order is maintained. Neither trees nor hash tables maintain order of insertion, thus they cannot be used.
+
+postsLiked (Post TreeSet) 
+I chose to use a TreeSet to hold the posts a user has liked because each time a user views a post, the program needs to check
+whether or not they've liked that post. If they've already liked it, the like button will change to an unlike button, and vice versa.
+In other words, searching through the posts liked is required each time a user views a post, which gives O(log n) time complexity.
+If I used a LinkedList, searching through the posts would give a time complexity of O(n).
+
+followers and following (Account TreeMap with username as key)
+I chose to use a TreeMap for holding followers and users following because unlike posts, where posts are added much more frequently
+than they are deleted, it's fair to assume that users will unfollow other users almost as frequently as they follow users, both
+of which give a time complexity of O(log n) with a TreeMap. If I used a LinkedList for holding these accounts, then following 
+other users would give a time complexity of O(1), but unfollowing other users would give a time complexity of O(n), as it requires 
+traversing through the entire list to find the user being unfollowed in the worst case scenario. Additionally, similarly to how 
+the program needs to check if a user has liked a post when they view it, the program also needs to check if the user is 
+following a user when they view their profile. If they're following the user, the follow button will change to an unfollow 
+button, and vice versa. If I used a LinkedList, searching through the list of users followed would give a time complexity of O(n). 
+
+usersBlocked (Account TreeMap with username as key)
+My justification for using a TreeMap to hold blocked users is essentially the same as my justification for using a TreeMap
+to hold followers and users following. Users will likely be unblocking users on a semi regular basis, which gives a time 
+complexity of O(log n), and would give a time complexity of O(n) if I were using a LinkedList. Additionally, 
+the program needs to check if a user is blocking another user when they view their profile. If I used a LinkedList,
+searching through the list of blocked users would give a time complexity of O(n). 
+
+notifications (Notification LinkedList)
+I chose to use a LinkedList for notifications for two simple reasons: firstly, you are only ever adding to the notification list.
+Old notifications get pushed to the end rather than outright removed. Adding notifications gives a time complexity
+of O(1), making this extremely efficient. Additionally, maintaining the order of notifications is important, as newest
+notifications should be displayed first. Maintaining order is not possible with a tree or hash table.
+
+userReviews (Review LinkedList)
+My justification for using a LinkedList to hold user reviews is essentially the same as my justification for using a LinkedList
+to hold the post history. Creating a review, which is generally done much more frequently than deleting a review, gives a time
+complexity of O(1). Additionally, maintaining chronological order of when reviews are made is a crucial aspect of this program. 
+New reviews get added to the end of the LinkedList, ensuring that order is maintained. Neither trees nor hash tables maintain order 
+of insertion, thus they cannot be used.
+
+
+
+Post objects contain the following: 
+
+images (Image LinkedList)
+Ultimately, the data structure I use for images isn't particularly relevant, as users will likely never be adding more than a handful
+of images to a post. LinkedList is still the best choice however, as adding an image gives a time complexity of O(1), and you don't 
+know exactly how many images a user will be adding to a post.
+
+comments (Comment LinkedList)
+My justification for using a LinkedList to hold comments is essentially the same as my justification for using a LinkedList
+to hold post history and user reviews. Creating a comment, which is generally done much more frequently than deleting a comment, 
+gives a time complexity of O(1). Additionally, maintaining chronological order of comments posted is important, and using a LinkedList
+ensures that order is maintained. Neither trees nor hash tables maintain order of insertion, thus they cannot be used.
+
+
+
+Review objects contain the following: 
+
+images (Image LinkedList)
+My justification is exactly the same as my justification for using a LinkedList to hold post images. It ultimately makes no difference,
+but LinkedList is still the best choice due to its fast insertion and indefinite size. 
+
+
+
+TrailList contains the following:
+
+trailsByName (HashMap containing Trail LinkedLists with name as the key)
+trailsByLength (HashMap containing Trail LinkedLists with length as the key)
+trailsByElevation (HashMap containing Trail LinkedLists with elevation as the key)
+trailsByDifficulty (HashMap containing Trail LinkedLists with difficulty as the key)
+trailsByRouteType (HashMap containing Trail LinkedLists with route type as the key)
+
+Since we know the maximum number of trails that can be stored (50,000), we're able to use HashMaps to store the trails, 
+which allows for extremely efficient insertion, removal, and searching, all of which give a time complexity of O(1). 
+My TrailList implementation is designed primarily with filtering in mind, as I wanted to reduce the number of items that you need 
+to iterate through while filtering as much as possible. Essentially, each HashMap bucket stores a LinkedList that contains matching 
+key criteria (e.g. two trails with the same name will be stored in the same bucket, all trails with the same difficulty will be 
+stored in the same bucket, etc..). When you search for a trail, the program will grab each LinkedList of trails that meet one of the 
+specified search criteria from the HashMaps (which is O(1)), and compare their sizes. Whichever LinkedList is the smallest will be 
+used for filtering. In the majority of cases, filtering will still give a time complexity of O(n), however, you're cutting down 
+the size of the list that you have to filter through considerably, resulting in a significantly reduced O(n). In the best case 
+scenario, such as if you're only searching by name or searching by an extremely narrow distance/elevation, filtering will be 
+virtually, if not literally O(1). 
+
+
+
+Trail objects contain the following:
+
+reviews(LinkedList)
+My justification for using a LinkedList to hold reviews in Trail objects is exactly the same as my justification for using a LinkedList
+to hold userReviews inside Account objects. Creating a review, which is generally done much more frequently than deleting a review, 
+gives a time complexity of O(1). Additionally, maintaining chronological order of when reviews are made is important. New reviews get 
+added to the end of the LinkedList, ensuring that order is maintained. Neither trees nor hash tables maintain order of insertion, 
+thus they cannot be used.
+
+
+

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" spacing="1.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PostViewController">
+   <children>
+      <HBox alignment="CENTER" maxWidth="50.0" minHeight="75.0" prefWidth="466.0" spacing="10.0">
+         <children>
+            <ImageView fx:id="profilePicture" fitHeight="62.5" fitWidth="62.5" pickOnBounds="true" preserveRatio="true" />
+            <VBox alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" minHeight="20.0" prefWidth="390.0">
+                     <children>
+                        <Text fx:id="username" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" maxWidth="439.0" minHeight="20.0">
+                     <children>
+                        <Text fx:id="date" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" underline="true" wrappingWidth="361.76090681552887">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox fx:id="editBtnHBox" alignment="CENTER" spacing="10.0" />
+         </children>
+      </HBox>
+      <StackPane>
+         <children>
+            <ImageView fx:id="postImageView" fitHeight="300.0" fitWidth="450.0" pickOnBounds="true" preserveRatio="true" />
+            <HBox fx:id="imageHBox" alignment="TOP_CENTER" spacing="10.0" />
+         </children>
+      </StackPane>
+      <HBox alignment="CENTER_LEFT" maxWidth="439.0" minHeight="20.0">
+         <children>
+            <Text fx:id="caption" strokeType="OUTSIDE" strokeWidth="0.0" text="Caption">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="439.0" minHeight="20.0">
+         <children>
+            <Text fx:id="trailName" strokeType="OUTSIDE" strokeWidth="0.0" text="Trail" underline="true">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="439.0" minHeight="20.0" spacing="100.0">
+         <children>
+            <Text fx:id="time" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
+            <Text fx:id="totalTime" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Time" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="439.0" minHeight="20.0" spacing="105.0">
+         <children>
+            <Text fx:id="totalDistance" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Distance" />
+            <Text fx:id="averagePace" strokeType="OUTSIDE" strokeWidth="0.0" text="Average Pace" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="439.0" minHeight="30.0" spacing="115.0">
+         <children>
+            <Button fx:id="likeBtn" minWidth="90.0" mnemonicParsing="false" onAction="#likeBtnClicked" text="Like">
+               <graphic>
+                  <ImageView fx:id="likeBtnIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button fx:id="commentBtn" minWidth="90.0" mnemonicParsing="false" onAction="#commentBtnClicked" text="Comment">
+               <graphic>
+                  <ImageView fx:id="commentBtnIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+         </children></HBox>
+      <HBox minHeight="20.0" />
+   </children>
+</VBox>

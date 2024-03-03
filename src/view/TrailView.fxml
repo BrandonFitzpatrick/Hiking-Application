@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TrailViewController">
+   <children>
+      <HBox fx:id="editBtnHBox" alignment="CENTER_LEFT" maxWidth="500.0" spacing="25.0">
+         <children>
+            <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Trail">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="reviewsBtn" mnemonicParsing="false" onAction="#reviewsBtnClicked" text="Reviews" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="500.0" spacing="25.0">
+         <children>
+            <Text fx:id="startAddress" strokeType="OUTSIDE" strokeWidth="0.0" text="Start: 223 Address" />
+         </children></HBox>
+      <HBox fx:id="endAddressHBox" alignment="CENTER_LEFT" maxWidth="500.0">
+         <children>
+            <Text fx:id="endAddress" strokeType="OUTSIDE" strokeWidth="0.0" text="End: 225 Address" />
+         </children>
+      </HBox>
+      <HBox maxWidth="500.0" spacing="32.0">
+         <children>
+            <Text fx:id="distance" strokeType="OUTSIDE" strokeWidth="0.0" text="Distance: 5 Miles" />
+         </children></HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="500.0">
+         <children>
+            <Text fx:id="elevationGain" strokeType="OUTSIDE" strokeWidth="0.0" text="Elevation Gain: 10 Feet" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="500.0">
+         <children>
+            <Text fx:id="difficulty" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty: Hard" />
+         </children>
+      </HBox>
+      <HBox maxWidth="500.0" spacing="42.0">
+         <children>
+            <Text fx:id="routeType" strokeType="OUTSIDE" strokeWidth="0.0" text="Route Type: Out_And_Back" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

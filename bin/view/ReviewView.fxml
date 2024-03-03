@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" spacing="1.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReviewViewController">
+   <children>
+      <HBox fx:id="followBtnHBox" alignment="CENTER" maxWidth="50.0" minHeight="75.0" prefWidth="466.0" spacing="10.0">
+         <children>
+            <ImageView fx:id="profilePicture" fitHeight="62.5" fitWidth="62.5" pickOnBounds="true" preserveRatio="true" />
+            <VBox alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="20.0">
+                     <children>
+                        <Text fx:id="username" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Text fx:id="date" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" underline="true" wrappingWidth="361.76090681552887">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Text fx:id="time" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox fx:id="editBtnHBox" alignment="CENTER" spacing="10.0" />
+         </children>
+      </HBox>
+      <StackPane>
+         <children>
+            <ImageView fx:id="postImageView" fitHeight="300.0" fitWidth="450.0" pickOnBounds="true" preserveRatio="true" />
+            <HBox fx:id="imageHBox" alignment="TOP_CENTER" spacing="10.0" />
+         </children>
+      </StackPane>
+      <HBox alignment="CENTER_LEFT" maxWidth="439.0" spacing="25.0">
+         <children>
+            <Text fx:id="trailName" strokeType="OUTSIDE" strokeWidth="0.0" text="Trail Name">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="reviewScore" strokeType="OUTSIDE" strokeWidth="0.0" text="5/5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="439.0" minHeight="20.0">
+         <children>
+            <Text fx:id="reviewText" strokeType="OUTSIDE" strokeWidth="0.0" text="Review" wrappingWidth="439.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="25.0" />
+   </children>
+</VBox>

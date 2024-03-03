@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" spacing="5.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TrailCreationViewController">
+   <children>
+      <HBox fx:id="hBox" alignment="CENTER_RIGHT" maxWidth="475.0" minHeight="25.0" spacing="101.0">
+         <children>
+            <Text fx:id="createTrail" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Trail">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="createBtn" minWidth="90.0" mnemonicParsing="false" onAction="#createBtnClicked" text="Create" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="25.0">
+         <children>
+            <TextField fx:id="trailNameField" prefWidth="495.0" promptText="Trail Name" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="25.0" spacing="75.0">
+         <children>
+            <TextField fx:id="startAddressField" minWidth="210.0" promptText="Start Address" />
+            <TextField fx:id="endAddressField" minWidth="210.0" promptText="End Address" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="25.0" spacing="75.0">
+         <children>
+            <TextField fx:id="lengthField" minWidth="210.0" promptText="Length" />
+            <TextField fx:id="elevationField" minWidth="210.0" promptText="Elevation" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="25.0" spacing="75.0">
+         <children>
+            <ComboBox fx:id="difficultyComboBox" minWidth="210.0" promptText="Difficulty" />
+            <ComboBox fx:id="routeTypeComboBox" minWidth="210.0" prefWidth="150.0" promptText="Route Type" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="5.0">
+         <children>
+            <Text fx:id="trailCreationFailed" fill="#dc0b0b" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+</VBox>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LogInViewController">
+   <children>
+      <HBox minHeight="40.0" />
+      <HBox alignment="CENTER" minHeight="40.0" spacing="20.0">
+         <children>
+            <TextField fx:id="usernameField" minWidth="250.0" promptText="Username" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="40.0">
+         <children>
+            <PasswordField fx:id="passwordField" minWidth="250.0" promptText="Password" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="40.0">
+         <children>
+            <Button fx:id="logInBtn" minWidth="250.0" mnemonicParsing="false" onAction="#logInBtnClicked" text="Log in" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="5.0">
+         <children>
+            <Text fx:id="invalidCredentials" fill="#f41515" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="40.0">
+         <children>
+            <Button fx:id="forgotPasswordBtn" mnemonicParsing="false" onAction="#forgotPasswordBtnClicked" text="Forgot password?" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="125.0">
+         <children>
+            <Button fx:id="createAccountBtn" minWidth="250.0" mnemonicParsing="false" onAction="#createAccountBtnClicked" text="Create new account" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

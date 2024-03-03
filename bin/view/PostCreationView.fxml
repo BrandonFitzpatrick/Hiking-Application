@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" spacing="5.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PostCreationViewController">
+   <children>
+      <HBox fx:id="hBox" alignment="CENTER_RIGHT" maxWidth="475.0" minHeight="25.0" spacing="80.0">
+         <children>
+            <Text fx:id="createNewPost" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Post">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="postBtn" minWidth="90.0" mnemonicParsing="false" onAction="#postBtnClicked" text="Post" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="25.0">
+         <children>
+            <TextField fx:id="trailNameField" prefWidth="500.0" promptText="Trail Name" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="25.0" spacing="150.0">
+         <children>
+            <DatePicker fx:id="startDatePicker" promptText="Start Date" />
+            <DatePicker fx:id="endDatePicker" promptText="End Date" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" spacing="275.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Start Time" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="End Time" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="25.0" spacing="150.0">
+         <children>
+            <Spinner fx:id="startTimeSpinner" minWidth="175.0" />
+            <Spinner fx:id="endTimeSpinner" minWidth="175.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="25.0" spacing="150.0">
+         <children>
+            <TextField fx:id="distanceField" minWidth="500.0" promptText="Distance Hiked (Miles)" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <TextArea fx:id="captionField" prefHeight="100.0" prefWidth="500.0" promptText="Write a caption..." />
+         </children>
+      </HBox>
+      <Button fx:id="addImagesBtn" mnemonicParsing="false" onAction="#addImagesBtnClicked" prefWidth="500.0" text="Add Images? (Optional)" />
+      <StackPane prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="imageView" fitHeight="200.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" />
+            <HBox fx:id="imageHBox" alignment="TOP_CENTER" maxWidth="500.0" spacing="10.0">
+               <children>
+                  <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteBtnClicked">
+                     <graphic>
+                        <ImageView fx:id="deleteBtnIcon" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="switchImagesBtn" mnemonicParsing="false" onAction="#switchImagesBtnClicked">
+                     <graphic>
+                        <ImageView fx:id="switchImagesBtnIcon" fitHeight="15.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </StackPane>
+      <HBox alignment="CENTER" minHeight="5.0">
+         <children>
+            <Text fx:id="postCreationFailed" fill="#dc0b0b" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+</VBox>
